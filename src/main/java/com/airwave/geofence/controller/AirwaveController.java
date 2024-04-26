@@ -22,9 +22,9 @@ public class AirwaveController {
 
     StringBuilder sizeString = new StringBuilder("Size:");
 
-    @RequestMapping("/hello")
-    public String hello(){
-        return "hello";
+    @RequestMapping("/healthCheck")
+    public String healthCheck(){
+        return " Geofence API Service is up and running";
     }
 
 
@@ -40,15 +40,15 @@ public class AirwaveController {
 
     }
 
-    @GetMapping(value = "/geofence/{id}", produces = "application/json")
-    public Geofence getGeofence(@PathVariable int id){
+    @GetMapping(value = "/geofence/id/{id}", produces = "application/json")
+    public List<Geofence> getGeofence(@PathVariable int id){
         return geofenceService.getGeofenceById(id);
 
     }
 
-    @GetMapping(value = "/geofence/{viewName}", produces = "application/json")
-    public Geofence getGeofenceByViewName(@PathVariable String viewName){
-        return geofenceService.getGeofenceByViewName(viewName);
+    @GetMapping(value = "/geofence/viewname/{viewname}", produces = "application/json")
+    public Geofence getGeofenceByViewName(@PathVariable String viewname){
+        return geofenceService.getGeofenceByViewName(viewname);
 
     }
 

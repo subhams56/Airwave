@@ -26,13 +26,16 @@ public class GeofenceRepository {
 
     }
 
-    public Geofence getGeofenceById(int id){
+    public List<Geofence> getGeofenceById(int id){
         String sql = "SELECT * FROM geofence WHERE geofence_id = ?";
-        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Geofence.class), id);
+
+
+        List<Geofence> geofences = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Geofence.class), id);
+        return geofences;
     }
 
-    public Geofence getGeofenceByViewName(String viewName){
+    public Geofence getGeofenceByViewName(String viewname){
         String sql = "SELECT * FROM geofence WHERE viewname = ?";
-        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Geofence.class), viewName);
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Geofence.class), viewname);
     }
 }

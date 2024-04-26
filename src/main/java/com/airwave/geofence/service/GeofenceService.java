@@ -23,12 +23,12 @@ public class GeofenceService {
         return geofenceRepository.geoFenceSize();
     }
 
-    public Geofence getGeofenceById(int id) {
+    public List<Geofence> getGeofenceById(int id) {
         return geofenceRepository.getGeofenceById(id);
     }
 
-    public Geofence getGeofenceByViewName(String viewName) {
-        return geofenceRepository.getGeofenceByViewName(viewName);
+    public Geofence getGeofenceByViewName(String viewname) {
+        return geofenceRepository.getGeofenceByViewName(viewname);
     }
 }
 
