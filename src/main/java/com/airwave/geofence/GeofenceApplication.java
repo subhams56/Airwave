@@ -10,4 +10,5 @@ public class GeofenceApplication {
 		SpringApplication.run(GeofenceApplication.class, args);
 	}
 
+
 }
