@@ -11,8 +11,14 @@ import java.util.List;
 @Repository
 public class GeofenceRepository {
 
-    @Autowired
+
     private JdbcTemplate jdbcTemplate;
+
+
+    @Autowired
+    public GeofenceRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public List<Geofence> FindAll() {
         String sql = "SELECT * FROM geofence";
@@ -20,10 +26,16 @@ public class GeofenceRepository {
 
     }
 
+//    public int geoFenceSize(){
+//        String sql = "SELECT count(*) FROM geofence";
+//        return jdbcTemplate.queryForObject(sql, Integer.class);
+//
+//    }
+
     public int geoFenceSize() {
         String sql = "SELECT count(*) FROM geofence";
-        return jdbcTemplate.queryForObject(sql, Integer.class);
-
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        return count != null ? count : 0;
     }
 
     public List<Geofence> getGeofenceById(int id){

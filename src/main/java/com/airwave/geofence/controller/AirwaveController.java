@@ -23,8 +23,13 @@ public class AirwaveController {
 
 
     private static final Logger logger = LoggerFactory.getLogger(AirwaveController.class);
-    @Autowired
+
     private GeofenceService geofenceService;
+
+    @Autowired
+    public AirwaveController(GeofenceService geofenceService) {
+        this.geofenceService = geofenceService;
+    }
 
 
     @RequestMapping("/healthCheck")

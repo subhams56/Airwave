@@ -11,8 +11,14 @@ import java.util.List;
 @Service
 public class GeofenceService {
 
-    @Autowired
+
     private GeofenceRepository geofenceRepository;
+
+
+    @Autowired
+    public GeofenceService(GeofenceRepository geofenceRepository) {
+        this.geofenceRepository = geofenceRepository;
+    }
 
 
     public List<Geofence> getAllGeofence() {
