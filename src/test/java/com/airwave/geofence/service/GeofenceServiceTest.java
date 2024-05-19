@@ -2,7 +2,6 @@ package com.airwave.geofence.service;
 
 import com.airwave.geofence.model.Geofence;
 import com.airwave.geofence.repository.GeofenceRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class GeofenceServiceTest {
+class GeofenceServiceTest {
 
     @Mock
     private GeofenceRepository geofenceRepository;
@@ -27,7 +26,7 @@ public class GeofenceServiceTest {
 
 
     @Test
-    public void testGetAllGeofence() {
+    void testGetAllGeofence() {
         // Arrange
         List<Geofence> expectedGeofences = new ArrayList<>();
         expectedGeofences.add(new Geofence());
@@ -41,7 +40,7 @@ public class GeofenceServiceTest {
     }
 
     @Test
-    public void testGeoFenceSize() {
+    void testGeoFenceSize() {
         // Arrange
         int expectedSize = 10;
 
@@ -54,7 +53,7 @@ public class GeofenceServiceTest {
     }
 
     @Test
-    public void testGetGeofenceById() {
+    void testGetGeofenceById() {
         // Arrange
         int id = 1;
         Geofence geofence = new Geofence();
@@ -72,7 +71,7 @@ public class GeofenceServiceTest {
     }
 
     @Test
-    public void testGetGeofenceByViewName() {
+    void testGetGeofenceByViewName() {
         // Arrange
         String viewname = "test-view";
         Geofence expectedGeofence = new Geofence();

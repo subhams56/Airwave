@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static org.springframework.jdbc.core.JdbcOperationsExtensionsKt.query;
+
 
 @Repository
 public class GeofenceRepository {

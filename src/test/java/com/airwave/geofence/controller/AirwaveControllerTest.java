@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class AirwaveControllerTest {
+class AirwaveControllerTest {
 
     @Mock
     private GeofenceService geofenceService;
@@ -35,7 +35,7 @@ public class AirwaveControllerTest {
     }
 
     @Test
-    public void testGetAllGeofence() {
+    void testGetAllGeofence() {
         List<Geofence> geofenceList = new ArrayList<>();
         Geofence geofence = new Geofence();
         geofenceList.add(geofence);
@@ -51,7 +51,7 @@ public class AirwaveControllerTest {
     }
 
     @Test
-    public void testGetGeofenceById_Success() {
+    void testGetGeofenceById_Success() {
         int id = 1;
         List<Geofence> geofenceList = new ArrayList<>();
         Geofence geofence = new Geofence();
@@ -65,7 +65,7 @@ public class AirwaveControllerTest {
     }
 
     @Test
-    public void testGetGeofenceById_NotFound() {
+    void testGetGeofenceById_NotFound() {
         int id = 1;
 
         when(geofenceService.getGeofenceById(id)).thenThrow(new NoSuchElementException());
@@ -74,7 +74,7 @@ public class AirwaveControllerTest {
     }
 
     @Test
-    public void testGetGeofenceByViewName_Success() {
+    void testGetGeofenceByViewName_Success() {
         String viewname = "test-view";
         Geofence geofence = new Geofence();
 
@@ -86,7 +86,7 @@ public class AirwaveControllerTest {
     }
 
     @Test
-    public void testGetGeofenceByViewName_NotFound() {
+    void testGetGeofenceByViewName_NotFound() {
         String viewname = "test-view";
 
         when(geofenceService.getGeofenceByViewName(viewname)).thenThrow(new NoSuchElementException());
