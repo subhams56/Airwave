@@ -4,7 +4,7 @@ import com.airwave.geofence.model.Geofence;
 import com.airwave.geofence.repository.GeofenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class GeofenceService {
 
 
     public List<Geofence> getAllGeofence() {
-        return geofenceRepository.FindAll();
+        return geofenceRepository.findAll();
     }
 
     public int geoFenceSize() {

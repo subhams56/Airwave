@@ -33,7 +33,7 @@ public class GeofenceServiceTest {
         expectedGeofences.add(new Geofence());
 
         // Act
-        when(geofenceRepository.FindAll()).thenReturn(expectedGeofences);
+        when(geofenceRepository.findAll()).thenReturn(expectedGeofences);
         List<Geofence> actualGeofences = geofenceService.getAllGeofence();
 
         // Assert

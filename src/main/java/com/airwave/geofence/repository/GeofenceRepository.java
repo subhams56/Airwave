@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static org.springframework.jdbc.core.JdbcOperationsExtensionsKt.query;
+
 @Repository
 public class GeofenceRepository {
 
@@ -20,17 +22,13 @@ public class GeofenceRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Geofence> FindAll() {
+    public List<Geofence> findAll() {
         String sql = "SELECT * FROM geofence";
         return jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(Geofence.class));
 
     }
 
-//    public int geoFenceSize(){
-//        String sql = "SELECT count(*) FROM geofence";
-//        return jdbcTemplate.queryForObject(sql, Integer.class);
-//
-//    }
+
 
     public int geoFenceSize() {
         String sql = "SELECT count(*) FROM geofence";
@@ -42,8 +40,8 @@ public class GeofenceRepository {
         String sql = "SELECT * FROM geofence WHERE geofence_id = ?";
 
 
-        List<Geofence> geofences = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Geofence.class), id);
-        return geofences;
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Geofence.class), id);
+
     }
 
     public Geofence getGeofenceByViewName(String viewname){
