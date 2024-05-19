@@ -12,7 +12,7 @@ import java.util.List;
 public class GeofenceService {
 
 
-    private GeofenceRepository geofenceRepository;
+    private final GeofenceRepository geofenceRepository;
 
 
     @Autowired

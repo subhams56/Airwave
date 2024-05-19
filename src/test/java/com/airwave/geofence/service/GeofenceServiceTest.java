@@ -58,7 +58,7 @@ public class GeofenceServiceTest {
         // Arrange
         int id = 1;
         Geofence geofence = new Geofence();
-        geofence.setGeofence_id(id);
+        geofence.setGeofenceId(id);
         List <Geofence> expectedGeofenceList = new ArrayList<>();
         expectedGeofenceList.add(geofence);
 

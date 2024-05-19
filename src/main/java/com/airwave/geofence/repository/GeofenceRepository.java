@@ -14,7 +14,7 @@ import static org.springframework.jdbc.core.JdbcOperationsExtensionsKt.query;
 public class GeofenceRepository {
 
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
 
     @Autowired

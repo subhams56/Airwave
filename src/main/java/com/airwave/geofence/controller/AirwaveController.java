@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,11 +42,11 @@ public class AirwaveController {
     public ResponseEntity<Map<String,List<Geofence>>> getAllGeofence(){
         try {
             List<Geofence> geofenceList = geofenceService.getAllGeofence();
-            int Size = geofenceService.geoFenceSize();
-            String SizeString = "Size : " + Size;
-            logger.info(SizeString);
-            ResponseEntity<Map<String,List<Geofence>>> responseEntity = new ResponseEntity<>(Collections.singletonMap(SizeString,geofenceList), HttpStatus.OK);
-            return responseEntity;
+            int size = geofenceService.geoFenceSize();
+            String sizeString = "Size : " + size;
+            logger.info(sizeString);
+            return new ResponseEntity<>(Collections.singletonMap(sizeString,geofenceList), HttpStatus.OK);
+
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

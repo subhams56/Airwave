@@ -3,7 +3,7 @@ package com.airwave.geofence.model;
 import java.sql.Date;
 
 public class Geofence {
-    private int geofence_id;
+    private int geofenceId;
     private String viewname;
     private String type;
     private boolean status;
@@ -13,8 +13,8 @@ public class Geofence {
     public Geofence() {
     }
 
-    public Geofence(int geofence_id, String viewname, String type, boolean status, Date date) {
-        this.geofence_id = geofence_id;
+    public Geofence(int geofenceId, String viewname, String type, boolean status, Date date) {
+        this.geofenceId = geofenceId;
         this.viewname = viewname;
         this.type = type;
         this.status = status;
@@ -22,12 +22,12 @@ public class Geofence {
     }
 
     // Getters and Setters
-    public int getGeofence_id() {
-        return geofence_id;
+    public int getGeofenceId() {
+        return geofenceId;
     }
 
-    public void setGeofence_id(int geofence_id) {
-        this.geofence_id = geofence_id;
+    public void setGeofenceId(int geofenceId) {
+        this.geofenceId = geofenceId;
     }
 
     public String getViewname() {
@@ -66,7 +66,7 @@ public class Geofence {
     @Override
     public String toString() {
         return "Geofence{" +
-                "geofence_id=" + geofence_id +
+                "geofence_id=" + geofenceId +
                 ", viewname='" + viewname + '\'' +
                 ", type='" + type + '\'' +
                 ", status=" + status +
